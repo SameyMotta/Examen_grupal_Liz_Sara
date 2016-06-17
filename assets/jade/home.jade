@@ -32,25 +32,16 @@ html(lang='es-PE')
                             li EL POPULAR.PE
                             li FUNDACION GUSTAVO MOHME LLANA
                     .col-md-6.text-left
-                        ul
-                            li.pad-right-10.inline
+                        ul.list-unstyled.list-inline
+                            li
                                 a(href="#") SUSCRIBETE AL BOLETIN
                             li.pad-right-10.inline
                                 a.deconon(href="#")
-                                    i.text18.fb.ionicon-social-facebook
+                                    img(src="../image/social_sprite1.png")
                             li.pad-right-10.inline
                                 a.deconon(href="")
-                                    i.text18.twitter.ion-social-twitter
-                            li.pad-right-10.inline
-                                a.deconon(href="")
-                                    i.text18.googleplus.ion-social-googleplus
-                            li.pad-right-10.inline
-                                a.deconon(href="")
-                                    i.text18.message.ion-ios-email
-                            li.pad-right-10.inline
-                                a.deconon(href="")
-                                    i.text18.rss.ion-social-rss
-                            li.pad-right-10.inline
+                                    img(src="../image/social_sprite_022.png")
+                            li
                                 a.deconon.negro.buscar(href="") BUSCAR
                                     i.text18.negro.ion-android-search
     content
@@ -135,15 +126,10 @@ html(lang='es-PE')
                                     img(src="../image/banner-header.jpg")
                                 .titular GUERRA EN LA MUNICIPALIDAD DE LIMA METROPOLITANA
                                 .iconos-titular
-                                    ul
-                                        li
-                                            .iconos
-                                                a.fb.inline.ion-social-facebook(href="#")
-                                            .iconos
-                                                a.twitter.inline.ion-social-twitter(href="#")
-                                            .iconos
-                                                a.googleplus.inline.ion-social-googleplus(href="#")
-                                        li
+                                    ul.list-unstyled.list-inline
+                                        li.inline
+                                            img(src="../image/social_sprite1.png")
+                                        li.inline
                                             .point.inline.posicion &#8226;
                                             .text12.inline Hace 12 minutos
                                             .point.inline.posicion &#8226;
@@ -239,6 +225,106 @@ html(lang='es-PE')
                                 h3 ULTIMAS NOTICIAS
                                     | 
                                     img(src="../image/double-arrow-bottom.png")
-                            .col-md-4
+
+                                mixin noticias(tiempo, titulo, foto, parrafo, comentario, categoria)
+                                    .row
+                                        p=tiempo
+                                        h4=titulo
+                                        .col-md-4
+                                            img.imagen-noticia(src=foto)
+                                        .col-md-8
+                                            p=parrafo
+                                            img(src="../image/social_sprite1.png")
+                                            img.pad-riglef-8(src="../image/bullet.gif")
+                                            img.pad-riglef-8(src="../image/ico_comment.png")
+                                            p.inline= comenta
+                                            img.pad-riglef-8(src="../image/bullet.gif")
+                                            p.inline= categoria
+                                    .row
+                                        hr
+                                +noticias('Hace 1 hora 12 mins', 'Roque Benavides respalda proyecto Tía María y espera que Conga se socialice', '../image/thumb-post-image.jpg', 'Zenaida Condori Contreras Arequipa Para el presidente de la Compañía de Minas Buenaventura, Roque Benavides, el proyecto Tía María, que promueve Southern Perú, ya debe...', '10','REGIONAL')
+                                +noticias('Hace 1 hora 12 mins', 'Emma Watson protagonizará La bella y la bestia | VIDEO', '../image/img_news_grid.jpg' , ' La actriz Emma Watson fue confirmada por Disney como la protagonista de &apos;La bella y la bestia&apos; en la version de carne y hueso.','15','ESPECTÁCULOS')
+                                +noticias('Hace 1 hora 12 mins', 'Roque Benavides respalda proyecto Tía María y espera que Conga se socialice', '../image/thumb-post-image.jpg', 'Zenaida Condori Contreras Arequipa Para el presidente de la Compañía de Minas Buenaventura, Roque Benavides, el proyecto Tía María, que promueve Southern Perú, ya debe...', '10','REGIONAL')
+                                +noticias('Hace 1 hora 12 mins', 'Emma Watson protagonizará La bella y la bestia | VIDEO', '../image/img_news_grid.jpg' , ' La actriz Emma Watson fue confirmada por Disney como la protagonista de &apos;La bella y la bestia&apos; en la version de carne y hueso.','15','ESPECTÁCULOS')
+                                +noticias('Hace 1 hora 12 mins', 'Roque Benavides respalda proyecto Tía María y espera que Conga se socialice', '../image/thumb-post-image.jpg', 'Zenaida Condori Contreras Arequipa Para el presidente de la Compañía de Minas Buenaventura, Roque Benavides, el proyecto Tía María, que promueve Southern Perú, ya debe...', '10','REGIONAL')
+                                +noticias('Hace 1 hora 12 mins', 'Roque Benavides respalda proyecto Tía María y espera que Conga se socialice', '../image/thumb-post-image.jpg', 'Zenaida Condori Contreras Arequipa Para el presidente de la Compañía de Minas Buenaventura, Roque Benavides, el proyecto Tía María, que promueve Southern Perú, ya debe...', '10','REGIONAL')
+                                +noticias('Hace 1 hora 12 mins', 'Emma Watson protagonizará La bella y la bestia | VIDEO', '../image/img_news_grid.jpg' , ' La actriz Emma Watson fue confirmada por Disney como la protagonista de &apos;La bella y la bestia&apos; en la version de carne y hueso.','15','ESPECTÁCULOS')
+                                +noticias('Hace 1 hora 12 mins', 'Roque Benavides respalda proyecto Tía María y espera que Conga se socialice', '../image/thumb-post-image.jpg', 'Zenaida Condori Contreras Arequipa Para el presidente de la Compañía de Minas Buenaventura, Roque Benavides, el proyecto Tía María, que promueve Southern Perú, ya debe...', '10','REGIONAL')
+                                
+
+
+                            .col-md-4.lateral-derecha
+                                .row.suscribete
+                                    img.icono(src='../image/img_sucribe.png')
+                                    h3 Suscríbete a nuestro boletín
+                                    input(type="text")
+                                    br
+                                    button SUSCRIBIRSE
+                                .row.borde
+                                .row.aweita
+                                    img.logo_aweita(src="../image/logo_aweita.jpg")
+                                    mixin aweita(imagen, texto)
+                                        .row
+                                            .col-md-5
+                                                img(src=imagen)
+                                            .col-md-7
+                                                p=texto
+                                    +aweita('../image/img_aweita.jpg', 'Juan Roman Riquelme ; al último 10 de Argentina')
+                                    +aweita('../image/img_aweita.jpg', '¨Lewis Carrol: un dia como hoy nacio el autor de Alicia en el ...')
+                                    +aweita('../image/img_aweita.jpg', 'Juan Roman Riquelme ; al último 10 de Argentina')
+                                    +aweita('../image/img_aweita.jpg', '¨Lewis Carrol: un dia como hoy nacio el autor de Alicia en el ...')
+                                    p.text-center Más en
+                                        a Aweita.pe
+                                .row.borde
+                                .row.destacadas
+                                    p FOTOS DESTACADAS
+                                    img(src="../image/img_fotodes_prominent.jpg") 
+                                    p Lineas de Nasca: admiten prisión preventiva de 6 meses para activista de Greenpeace | FOTOS   
+                                    mixin destacadas(imagen, texto)
+                                        .row
+                                            .col-md-4
+                                                img(src=imagen)
+                                            .col-md-8
+                                                p=texto
+                                    +destacadas("../image/img_fotodes.jpg", "Uchuraccay: El pueblo que recibe con flores a quienes llegan de pie| FOTOS")
+                                    +destacadas("../image/img_fotodes.jpg", "Uchuraccay: El pueblo que recibe con flores a quienes llegan de pie| FOTOS")
+                                    +destacadas("../image/img_fotodes.jpg", "Uchuraccay: El pueblo que recibe con flores a quienes llegan de pie| FOTOS")
+                                .row.borde
+                                    hr
+                                .row.especiales
+                                    p ESPECIALES
+                                    mixin especiales(imagen, texto)
+                                        img(src=imagen)
+                                        p=texto
+                                    +especiales("../image/img_especiales_aside.jpg", "Regimen Laboral Juvenil")
+                                    +especiales("../image/img_especiales_aside.jpg", "COP20")
+                                    +especiales("../image/img_especiales_aside.jpg", "Concentracion de Medios")
+                                    +especiales("../image/img_especiales_aside.jpg", "Especies peruana en peligro de extincion")
+                                .row.borde
+                                    hr
+                                .row.borde.rojo
+                                .row.caricaturas
+                                    p.text-center CARLINCATURA DEL DIA
+                                    p.text-center.text-bold Carlincaturas 30-01-2015
+                                    img.rojimg(src="../image/img_carlincatura_sd.jpg")
+                                    p.text-bold.text-center Todas las carlincaturas
+                                .row.borde
+                                    hr
+                                .row.borde
+                                .row.nuestros-blogueros
+                                    p.text-center NUESTROS BLOGUEROS
+                                    mixin blogueros
+                                        .row
+                                            .col-md-3
+                                                img(src="../image/img_blogueros.jpg")
+                                            .col-md-9
+                                                p Augusto Alvarez Rodrich
+                                                p Charlie Hebdo, historia que no debe repetirse
+                                    +blogueros
+                                    +blogueros
+
+
+
+
 
                     .col-md-2

@@ -5,8 +5,9 @@ html(lang='es-PE')
     title Home
     link(href='http://fonts.googleapis.com/css?family=PT+Sans:400,700', rel='stylesheet', type='text/css')
     link(href='http://fonts.googleapis.com/css?family=Oswald:400,700', rel='stylesheet', type='text/css')
-    link(rel='stylesheet', type='text/css', href='../css/dist/font-awesome.min.css')
-    link(rel='stylesheet', type='text/css', href='../css/dist/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='../css/font-awesome.min.css')
+    link(rel='stylesheet', type='text/css', href='../css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='../css/ionicons.min.css')
     link(rel='stylesheet', type='text/css', href='../css/dist/slick.css')
     link(rel='stylesheet', type='text/css', href='../css/dist/slick-theme.css')
     link(rel='stylesheet', type='text/css', href='../css/main.css')
@@ -23,16 +24,16 @@ html(lang='es-PE')
             .container
                 .row
                     .col-md-12
-                        .img-top
+                        .img-top.text-center
                             img(src="../image/banner_top.jpg")
                 .row
                     .col-md-6
-                        ul
-                            li LIBERO.PE
+                        ul.list-style
+                            li.list-unstyled LIBERO.PE
                             li EL POPULAR.PE
                             li FUNDACION GUSTAVO MOHME LLANA
                     .col-md-6.text-left
-                        ul.list-unstyled.list-inline
+                        ul.list-style
                             li
                                 a(href="#") SUSCRIBETE AL BOLETIN
                             li.pad-right-10.inline
@@ -146,7 +147,7 @@ html(lang='es-PE')
                                             li
                                                 img.img-responsive(src="../image/img_grid_secundario.jpg")
                                                 .text2 Sub 20: Perú vs. Paraguay: bicolor empató 1-1 y pasó al hexagonal final del Sudamericano &#124; VIDEO
-                   .col-md-2
+                    .col-md-2
                         .publicidad.derecha
                             img(src="../image/banner_aside.jpg")
         .contenido
@@ -154,25 +155,25 @@ html(lang='es-PE')
                 .row
                     .col-md-2
                     .col-md-8
-                        .columnistas
-                            hr
-                            p COLUMNISTAS
-                            .slider-columnistas
-                            mixin columnistas(imagen, nombre, texto)
+                        .row.columnistas
+                            .col-md-12
+                                hr
+                                p COLUMNISTAS
+                                .slider-columnistas
+                                mixin columnistas(imagen, nombre, texto)
 
-                                .columnista1
-                                    img( src=imagen)
-                                    p= nombre
-                                    p= texto
-                                
-                            +columnistas("../image/img-columnistas.jpg", "Mario Vargas Llosa", "Megarrenuncia apulpinante")
-                            +columnistas("../image/img_blogueros.jpg", "Augusto Álvarez Rodrich", "Respuesta a una derrota estridente")
-                            +columnistas("../image/img-columnistas.jpg", "Mario Vargas Llosa", "Megarrenuncia apulpinante")
-                            +columnistas("../image/img_blogueros.jpg", "Augusto Álvarez Rodrich", "Respuesta a una derrota estridente")
-                            +columnistas("../image/img-columnistas.jpg", "Mario Vargas Llosa", "Megarrenuncia apulpinante")
-                            +columnistas("../image/img_blogueros.jpg", "Augusto Álvarez Rodrich", "Respuesta a una derrota estridente")
-           
-                        .primicias
+                                    .columnista1
+                                        img( src=imagen)
+                                        p= nombre
+                                        p= texto
+                                    
+                                +columnistas("../image/img-columnistas.jpg", "Mario Vargas Llosa", "Megarrenuncia apulpinante")
+                                +columnistas("../image/img_blogueros.jpg", "Augusto Álvarez Rodrich", "Respuesta a una derrota estridente")
+                                +columnistas("../image/img-columnistas.jpg", "Mario Vargas Llosa", "Megarrenuncia apulpinante")
+                                +columnistas("../image/img_blogueros.jpg", "Augusto Álvarez Rodrich", "Respuesta a una derrota estridente")
+                                +columnistas("../image/img-columnistas.jpg", "Mario Vargas Llosa", "Megarrenuncia apulpinante")
+                                +columnistas("../image/img_blogueros.jpg", "Augusto Álvarez Rodrich", "Respuesta a una derrota estridente")           
+                        .row.primicias
                             .col-md-4
                                 ul
                                     li
@@ -220,7 +221,7 @@ html(lang='es-PE')
                             .col-md-4
                                 .banner-lateral
                                     img.img-responsive(src="../image/banner-aside-home.jpg")
-                        .ultimas-noticias
+                        .row.ultimas-noticias
                             .col.md-8
                                 h3 ULTIMAS NOTICIAS
                                     | 
@@ -250,78 +251,86 @@ html(lang='es-PE')
                                 +noticias('Hace 1 hora 12 mins', 'Roque Benavides respalda proyecto Tía María y espera que Conga se socialice', '../image/thumb-post-image.jpg', 'Zenaida Condori Contreras Arequipa Para el presidente de la Compañía de Minas Buenaventura, Roque Benavides, el proyecto Tía María, que promueve Southern Perú, ya debe...', '10','REGIONAL')
                                 +noticias('Hace 1 hora 12 mins', 'Emma Watson protagonizará La bella y la bestia | VIDEO', '../image/img_news_grid.jpg' , ' La actriz Emma Watson fue confirmada por Disney como la protagonista de &apos;La bella y la bestia&apos; en la version de carne y hueso.','15','ESPECTÁCULOS')
                                 +noticias('Hace 1 hora 12 mins', 'Roque Benavides respalda proyecto Tía María y espera que Conga se socialice', '../image/thumb-post-image.jpg', 'Zenaida Condori Contreras Arequipa Para el presidente de la Compañía de Minas Buenaventura, Roque Benavides, el proyecto Tía María, que promueve Southern Perú, ya debe...', '10','REGIONAL')
-                                
 
-
-                            .col-md-4.lateral-derecha
+                            .col-md-4
                                 .row.suscribete
-                                    img.icono(src='../image/img_sucribe.png')
-                                    h3 Suscríbete a nuestro boletín
-                                    input(type="text")
-                                    br
-                                    button SUSCRIBIRSE
+                                    .col-md-12
+                                        img.icono(src='../image/img_sucribe.png')
+                                        h3 Suscríbete a nuestro boletín
+                                        input(type="text")
+                                        br
+                                        button SUSCRIBIRSE
                                 .row.borde
                                 .row.aweita
-                                    img.logo_aweita(src="../image/logo_aweita.jpg")
-                                    mixin aweita(imagen, texto)
-                                        .row
-                                            .col-md-5
-                                                img(src=imagen)
-                                            .col-md-7
-                                                p=texto
-                                    +aweita('../image/img_aweita.jpg', 'Juan Roman Riquelme ; al último 10 de Argentina')
-                                    +aweita('../image/img_aweita.jpg', '¨Lewis Carrol: un dia como hoy nacio el autor de Alicia en el ...')
-                                    +aweita('../image/img_aweita.jpg', 'Juan Roman Riquelme ; al último 10 de Argentina')
-                                    +aweita('../image/img_aweita.jpg', '¨Lewis Carrol: un dia como hoy nacio el autor de Alicia en el ...')
-                                    p.text-center Más en
-                                        a Aweita.pe
+                                    .col-md-12
+                                        img.logo_aweita(src="../image/logo_aweita.jpg")
+                                        mixin aweita(imagen, texto)
+                                            .row
+                                                .col-md-5
+                                                    img(src=imagen)
+                                                .col-md-7
+                                                    p=texto
+                                        +aweita('../image/img_aweita.jpg', 'Juan Roman Riquelme ; al último 10 de Argentina')
+                                        +aweita('../image/img_aweita.jpg', '¨Lewis Carrol: un dia como hoy nacio el autor de Alicia en el ...')
+                                        +aweita('../image/img_aweita.jpg', 'Juan Roman Riquelme ; al último 10 de Argentina')
+                                        +aweita('../image/img_aweita.jpg', '¨Lewis Carrol: un dia como hoy nacio el autor de Alicia en el ...')
+                                        p.text-center Más en
+                                            a Aweita.pe
                                 .row.borde
                                 .row.destacadas
-                                    p FOTOS DESTACADAS
-                                    img(src="../image/img_fotodes_prominent.jpg") 
-                                    p Lineas de Nasca: admiten prisión preventiva de 6 meses para activista de Greenpeace | FOTOS   
-                                    mixin destacadas(imagen, texto)
-                                        .row
-                                            .col-md-4
-                                                img(src=imagen)
-                                            .col-md-8
-                                                p=texto
-                                    +destacadas("../image/img_fotodes.jpg", "Uchuraccay: El pueblo que recibe con flores a quienes llegan de pie| FOTOS")
-                                    +destacadas("../image/img_fotodes.jpg", "Uchuraccay: El pueblo que recibe con flores a quienes llegan de pie| FOTOS")
-                                    +destacadas("../image/img_fotodes.jpg", "Uchuraccay: El pueblo que recibe con flores a quienes llegan de pie| FOTOS")
+                                    .col-md-12
+                                        p FOTOS DESTACADAS
+                                        img(src="../image/img_fotodes_prominent.jpg") 
+                                        p Lineas de Nasca: admiten prisión preventiva de 6 meses para activista de Greenpeace | FOTOS   
+                                        mixin destacadas(imagen, texto)
+                                            .row
+                                                .col-md-4
+                                                    img(src=imagen)
+                                                .col-md-8
+                                                    p=texto
+                                        +destacadas("../image/img_fotodes.jpg", "Uchuraccay: El pueblo que recibe con flores a quienes llegan de pie| FOTOS")
+                                        +destacadas("../image/img_fotodes.jpg", "Uchuraccay: El pueblo que recibe con flores a quienes llegan de pie| FOTOS")
+                                        +destacadas("../image/img_fotodes.jpg", "Uchuraccay: El pueblo que recibe con flores a quienes llegan de pie| FOTOS")
                                 .row.borde
                                     hr
                                 .row.especiales
-                                    p ESPECIALES
-                                    mixin especiales(imagen, texto)
-                                        img(src=imagen)
-                                        p=texto
-                                    +especiales("../image/img_especiales_aside.jpg", "Regimen Laboral Juvenil")
-                                    +especiales("../image/img_especiales_aside.jpg", "COP20")
-                                    +especiales("../image/img_especiales_aside.jpg", "Concentracion de Medios")
-                                    +especiales("../image/img_especiales_aside.jpg", "Especies peruana en peligro de extincion")
+                                    .col-md-12
+                                        p ESPECIALES
+                                        mixin especiales(imagen, texto)
+                                            img(src=imagen)
+                                            p=texto
+                                        +especiales("../image/img_especiales_aside.jpg", "Regimen Laboral Juvenil")
+                                        +especiales("../image/img_especiales_aside.jpg", "COP20")
+                                        +especiales("../image/img_especiales_aside.jpg", "Concentracion de Medios")
+                                        +especiales("../image/img_especiales_aside.jpg", "Especies peruana en peligro de extincion")
                                 .row.borde
                                     hr
                                 .row.borde.rojo
                                 .row.caricaturas
-                                    p.text-center CARLINCATURA DEL DIA
-                                    p.text-center.text-bold Carlincaturas 30-01-2015
-                                    img.rojimg(src="../image/img_carlincatura_sd.jpg")
-                                    p.text-bold.text-center Todas las carlincaturas
+                                    .col-md-12
+                                        p.text-center CARLINCATURA DEL DIA
+                                        p.text-center.text-bold Carlincaturas 30-01-2015
+                                        img.rojimg(src="../image/img_carlincatura_sd.jpg")
+                                        p.text-bold.text-center Todas las carlincaturas
                                 .row.borde
                                     hr
                                 .row.borde
                                 .row.nuestros-blogueros
-                                    p.text-center NUESTROS BLOGUEROS
-                                    mixin blogueros
-                                        .row
-                                            .col-md-3
-                                                img(src="../image/img_blogueros.jpg")
-                                            .col-md-9
-                                                p Augusto Alvarez Rodrich
-                                                p Charlie Hebdo, historia que no debe repetirse
-                                    +blogueros
-                                    +blogueros
+                                    .col-md-12
+                                        p.text-center NUESTROS BLOGUEROS
+                                        mixin blogueros
+                                            .row
+                                                .col-md-3
+                                                    img(src="../image/img_blogueros.jpg")
+                                                .col-md-9
+                                                    p Augusto Alvarez Rodrich
+                                                    p Charlie Hebdo, historia que no debe repetirse
+                                        +blogueros
+                                        +blogueros
+                                .row.borde
+                                    hr
+                                .row.impreso
+                                    .col-md-12
 
 
 
